@@ -1,0 +1,5 @@
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=http://auth-service:3000/notifications response_code=403 return_code=ok total_time=0.877999
+ETHON: performed EASY effective_url=http://auth-service:3000/validate response_code=403 return_code=ok total_time=0.006512
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=http://auth-service:3000/notifications response_code=404 return_code=ok total_time=2.373322

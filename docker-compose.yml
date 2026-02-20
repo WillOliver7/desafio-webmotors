@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    volumes:
+      - redis_data:/data
+  
+  sidekiq:
+    build: ./services/webscraping-manager
+    user: "1000:1000"
+    command: bundle exec sidekiq
+    working_dir: /app
+    volumes:
+      - ./services/webscraping-manager:/app
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://postgres:password@db:5432/manager_db
+      - AUTH_SERVICE_URL=http://auth-service:3000
+      - NOTIFICATION_SERVICE_URL=http://notification-service:3000
+    depends_on:
+      - db
+      - redis
+    stdin_open: true
+    tty: true
+
+  auth-service:
+    build: ./services/auth-service
+    user: "1000:1000"
+    command: bundle exec rails s -b '0.0.0.0'
+    working_dir: /app
+    volumes:
+      - ./services/auth-service:/app
+    ports:
+      - "3001:3000"
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_URL=postgresql://postgres:password@db:5432/auth_db
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  notification-service:
+    build: ./services/notification-service
+    user: "1000:1000"
+    command: bundle exec rails s -b '0.0.0.0'
+    working_dir: /app
+    volumes:
+      - ./services/notification-service:/app
+    ports:
+      - "3002:3000"
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_URL=postgresql://postgres:password@db:5432/notification_db
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  webscraping-manager:
+    build: ./services/webscraping-manager
+    user: "1000:1000"
+    command: bundle exec rails s -b '0.0.0.0'
+    working_dir: /app
+    volumes:
+      - ./services/webscraping-manager:/app
+    ports:
+      - "3003:3000"
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_URL=postgresql://postgres:password@db:5432/manager_db
+      - AUTH_SERVICE_URL=http://auth-service:3000
+      - NOTIFICATION_SERVICE_URL=http://notification-service:3000
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres_data:
+  redis_data:

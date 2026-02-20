@@ -1,0 +1,36 @@
+# --- Ruby/Rails ---
+*.gem
+*.rbc
+/.config
+/log/*.log
+/tmp/
+/public/system
+/public/assets
+/public/packs
+/public/packs-test
+.bundle/
+vendor/bundle
+lib/assets/
+node_modules/
+yarn-error.log
+.env
+.env.local
+
+# --- Docker ---
+.docker-data/
+db/*.sqlite3
+db/*.sqlite3-journal
+# Se você criou pastas locais para os volumes do Postgres ou Redis:
+postgres_data/
+redis_data/
+
+# --- IDEs/OS ---
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# --- Testing ---
+/coverage/
+/spec/examples.txt
