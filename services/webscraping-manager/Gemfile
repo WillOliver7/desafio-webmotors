@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.1.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.6"
@@ -36,12 +36,12 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 gem "sidekiq"
-gem "nokogiri"
 gem "httparty"
-gem "selenium-webdriver"
 gem "faraday", "~> 2.14"
 gem "typhoeus"
 gem "faraday-typhoeus"
+gem 'websocket-driver'
+gem 'playwright-ruby-client', '1.40.0'
 
 group :development, :test do
   # debugging

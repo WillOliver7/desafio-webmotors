@@ -15,6 +15,12 @@ node_modules/
 yarn-error.log
 .env
 .env.local
+# Ignora arquivos de cache do Bootsnap
+**/tmp/cache/bootsnap/
+
+# Ignora todos os arquivos dentro de tmp
+**/tmp/*
+!**/tmp/.keep
 
 # --- Docker ---
 .docker-data/

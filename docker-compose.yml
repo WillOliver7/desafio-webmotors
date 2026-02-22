@@ -17,20 +17,41 @@ services:
   sidekiq:
     build: ./services/webscraping-manager
     user: "1000:1000"
+    security_opt:
+      - seccomp:unconfined
     command: bundle exec sidekiq
-    working_dir: /app
+    working_dir: /rails
     volumes:
-      - ./services/webscraping-manager:/app
+      - ./services/webscraping-manager:/rails
     environment:
       - REDIS_URL=redis://redis:6379/0
+      - RAILS_ENV=development
       - DATABASE_URL=postgresql://postgres:password@db:5432/manager_db
+      - DB_HOST=db
       - AUTH_SERVICE_URL=http://auth-service:3000
       - NOTIFICATION_SERVICE_URL=http://notification-service:3000
+      - BROWSER_PATH=/usr/bin/chromium
+      - CHROME_BIN=/usr/bin/chromium
     depends_on:
       - db
       - redis
     stdin_open: true
     tty: true
+
+  playwright:
+    image: browserless/chrome:1.61-chrome-stable
+    container_name: playwright
+    networks:
+      default:
+        aliases:
+          - playwright
+    ports:
+      - "3004:3000"
+    environment:
+      - ENABLE_DEBUGGER=true
+      - CONNECTION_TIMEOUT=300000
+      - DEFAULT_HEADLESS=false
+    shm_size: '2gb'
 
   auth-service:
     build: ./services/auth-service
@@ -70,14 +91,15 @@ services:
     build: ./services/webscraping-manager
     user: "1000:1000"
     command: bundle exec rails s -b '0.0.0.0'
-    working_dir: /app
+    working_dir: /rails
     volumes:
-      - ./services/webscraping-manager:/app
+      - ./services/webscraping-manager:/rails
     ports:
       - "3003:3000"
     environment:
       - RAILS_ENV=development
       - DATABASE_URL=postgresql://postgres:password@db:5432/manager_db
+      - DB_HOST=db
       - AUTH_SERVICE_URL=http://auth-service:3000
       - NOTIFICATION_SERVICE_URL=http://notification-service:3000
     depends_on:
