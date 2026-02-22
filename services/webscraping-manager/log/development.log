@@ -3,3 +3,251 @@ ETHON: performed EASY effective_url=http://auth-service:3000/notifications respo
 ETHON: performed EASY effective_url=http://auth-service:3000/validate response_code=403 return_code=ok total_time=0.006512
 ETHON: Libcurl initialized
 ETHON: performed EASY effective_url=http://auth-service:3000/notifications response_code=404 return_code=ok total_time=2.373322
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3F... response_code=200 return_code=ok total_time=0.730386
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3F... response_code=200 return_code=ok total_time=0.903933
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3F... response_code=200 return_code=ok total_time=0.819813
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3F... response_code=403 return_code=ok total_time=0.672645
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3F... response_code=200 return_code=ok total_time=0.715742
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fmarca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.514112
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fmarca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.57548
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fmarca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.556479
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.476461
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.704342
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.520218
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.503148
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.556026
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.506578
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://www.webmotors.com.br/api/search/car?actualPage=1&displayPerPage=47&showCount=true&showMenu=true&url=https%3A%2F%2Fwww.webmotors.com.br%2Fcarros%2Fsp%3Fautocomplete%3Dhonda%26autocompleteTerm%3DHonda%2520Civic%26tipoveiculo%3Dcarros%26estadocidade%3DS%25C3%25A3o%2520Paulo%26marca1%3Dhonda%26modelo1%3Dcivic%26page%3D1 response_code=403 return_code=ok total_time=0.468181
+  [1m[35m (191.3ms)[0m  [1m[35mCREATE DATABASE "manager_db" ENCODING = 'unicode'[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1273077628727038575)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 17:42:00.087710', '2026-02-22 17:42:00.087715') RETURNING "key"[0m
+Migrating to CreateTasks (20260222173706)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "title" character varying, "status" character varying DEFAULT 'pending', "url" character varying, "result" jsonb, "error_message" text, "concluded_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260222173706') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1273077628727038575)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (156.8ms)[0m  [1m[35mCREATE DATABASE "manager_db" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tasks" CASCADE[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "title" character varying, "status" character varying DEFAULT 'pending', "url" character varying, "result" jsonb, "error_message" text, "concluded_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260222173706)[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 17:43:50.703237', '2026-02-22 17:43:50.703242') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'a2afcd5146c599d19996989f1ff07a8179e854e1', '2026-02-22 17:43:50.710871', '2026-02-22 17:43:50.710874') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (128.9ms)[0m  [1m[35mCREATE DATABASE "manager_db" ENCODING = 'unicode'[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1273077628727038575)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 17:48:24.985900', '2026-02-22 17:48:24.985906') RETURNING "key"[0m
+Migrating to CreateTasks (20260222173706)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "title" character varying, "status" character varying DEFAULT 'pending', "url" character varying, "result" jsonb, "error_message" text, "concluded_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260222173706') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1273077628727038575)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (2.4ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 17:49:05.223179"], ["updated_at", "2026-02-22 17:49:05.223179"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Update (2.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "failed"], ["error_message", "Não conseguiu vencer o Captcha após tentativas."], ["updated_at", "2026-02-22 17:50:19.643818"], ["id", 1]]
+  [1m[36mTRANSACTION (198.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 17:52:13.247282"], ["updated_at", "2026-02-22 17:52:13.247282"]]
+  [1m[36mTRANSACTION (514.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (3.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 17:55:55.061978"], ["updated_at", "2026-02-22 17:55:55.061978"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.6ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 17:56:50.721184"], ["updated_at", "2026-02-22 17:56:50.721184"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 17:57:55.228599"], ["updated_at", "2026-02-22 17:57:55.228599"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.8ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 17:58:25.863902"], ["updated_at", "2026-02-22 17:58:25.863902"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Update (1.4ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-02-22 17:58:52.070644"], ["id", 6]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Update (1.6ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "failed"], ["error_message", "Error: strict mode violation: locator('h1') resolved to 6 elements:\n    1) <h1 id=\"VehicleBasicInformationTitle\" class=\"Vehicle…>…</h1> aka getByRole('heading', { name: 'BMW X2 2.0 TURBO GASOLINA' })\n    2) <h1 class=\"sc-cIShpX eXKuue\">Informe os seus dados para agendar a videochamada</h1> aka getByText('Informe os seus dados para')\n    3) <h1 class=\"sc-RefOD dVMZEv\">Agendado</h1> aka getByText('Agendado')\n    4) <h1>Simule seu financiamento sem compromisso!</h1> aka getByTestId('simulation-form').getByText('Simule seu financiamento sem')\n    5) <h1 data-qa=\"financing_modal_msg_DA_desktop\">Continue para ver as parcelas.</h1> aka getByText('Continue para ver as parcelas.')\n    6) <h1 class=\"sc-csuQGl sWUsX\">Olá, para ver o telefone é preciso estar logado!</h1> aka getByText('Olá, para ver o telefone é')\n\nCall log:\nwaiting for locator('h1')\n"], ["updated_at", "2026-02-22 17:58:52.220999"], ["id", 6]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Create (2.4ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 18:05:22.676502"], ["updated_at", "2026-02-22 18:05:22.676502"]]
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:4:in `run'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTask Update (2.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-02-22 18:05:41.110060"], ["id", 7]]
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTask Update (2.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "failed"], ["error_message", "Error: strict mode violation: locator('h1') resolved to 6 elements:\n    1) <h1 id=\"VehicleBasicInformationTitle\" class=\"Vehicle…>…</h1> aka getByRole('heading', { name: 'BMW X2 2.0 TURBO GASOLINA' })\n    2) <h1 class=\"sc-cIShpX eXKuue\">Informe os seus dados para agendar a videochamada</h1> aka getByText('Informe os seus dados para')\n    3) <h1 class=\"sc-RefOD dVMZEv\">Agendado</h1> aka getByText('Agendado')\n    4) <h1>Simule seu financiamento sem compromisso!</h1> aka getByTestId('simulation-form').getByText('Simule seu financiamento sem')\n    5) <h1 data-qa=\"financing_modal_msg_DA_desktop\">Continue para ver as parcelas.</h1> aka getByText('Continue para ver as parcelas.')\n    6) <h1 class=\"sc-csuQGl sWUsX\">Olá, para ver o telefone é preciso estar logado!</h1> aka getByText('Olá, para ver o telefone é')\n\nCall log:\nwaiting for locator('h1')\n"], ["updated_at", "2026-02-22 18:05:41.232025"], ["id", 7]]
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Create (2.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 18:06:56.987470"], ["updated_at", "2026-02-22 18:06:56.987470"]]
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTRANSACTION (250.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:4:in `run'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTask Update (2.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-02-22 18:07:22.232074"], ["id", 8]]
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTask Update (2.9ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "failed"], ["error_message", "send_message failed"], ["updated_at", "2026-02-22 18:12:26.524681"], ["id", 8]]
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:76:in `rescue in run'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_captcha_solver.rb:76:in `rescue in run'
+  [1m[36mTask Update (1.7ms)[0m  [1m[33mUPDATE "tasks" SET "error_message" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["error_message", "closed stream"], ["updated_at", "2026-02-22 18:12:26.537893"], ["id", 8]]
+  ↳ app/services/webmotors_captcha_solver.rb:76:in `rescue in run'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_captcha_solver.rb:76:in `rescue in run'
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Create (1.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 18:15:14.841962"], ["updated_at", "2026-02-22 18:15:14.841962"]]
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:4:in `run'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_captcha_solver.rb:61:in `rescue in block in run'
+  [1m[36mTask Update (3.5ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "failed"], ["error_message", "Não conseguiu vencer o Captcha após tentativas."], ["updated_at", "2026-02-22 18:15:55.639755"], ["id", 9]]
+  ↳ app/services/webmotors_captcha_solver.rb:61:in `rescue in block in run'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_captcha_solver.rb:61:in `rescue in block in run'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Create (1.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 18:17:29.709674"], ["updated_at", "2026-02-22 18:17:29.709674"]]
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:4:in `run'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTask Update (2.1ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-02-22 18:17:52.159859"], ["id", 10]]
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTask Update (7.6ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "error_message" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "failed"], ["error_message", "send_message failed"], ["updated_at", "2026-02-22 18:22:54.441302"], ["id", 10]]
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:32:in `rescue in call'
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:71:in `rescue in run'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_captcha_solver.rb:71:in `rescue in run'
+  [1m[36mTask Update (2.1ms)[0m  [1m[33mUPDATE "tasks" SET "error_message" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["error_message", "closed stream"], ["updated_at", "2026-02-22 18:22:54.467343"], ["id", 10]]
+  ↳ app/services/webmotors_captcha_solver.rb:71:in `rescue in run'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_captcha_solver.rb:71:in `rescue in run'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Create (2.6ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 18:30:38.667816"], ["updated_at", "2026-02-22 18:30:38.667816"]]
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:4:in `run'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTask Update (2.5ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-02-22 18:30:47.010725"], ["id", 11]]
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:27:in `call'
+  [1m[36mTask Update (2.1ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "title" = $2, "result" = $3, "concluded_at" = $4, "updated_at" = $5 WHERE "tasks"."id" = $6[0m  [["status", "completed"], ["title", "Coleta: BMW X2"], ["result", "{\"marca\":\"BMW\",\"modelo\":\"X2\",\"descricao\":\"2.0 TURBO GASOLINA XDRIVE M35i STEPTRONIC\"}"], ["concluded_at", "2026-02-22 18:31:17.195723"], ["updated_at", "2026-02-22 18:31:17.196310"], ["id", 11]]
+  ↳ app/services/webmotors_scraper.rb:27:in `call'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:27:in `call'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "status", "url", "result", "error_message", "concluded_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "BMW X2 - Pendente"], ["status", "pending"], ["url", "https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"], ["result", nil], ["error_message", nil], ["concluded_at", nil], ["created_at", "2026-02-22 18:32:58.386345"], ["updated_at", "2026-02-22 18:32:58.386345"]]
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/scrape_vehicles_worker.rb:5:in `perform'
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/services/webmotors_captcha_solver.rb:4:in `run'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTask Update (2.5ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "processing"], ["updated_at", "2026-02-22 18:33:21.343581"], ["id", 12]]
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:3:in `call'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/webmotors_scraper.rb:27:in `call'
+  [1m[36mTask Update (2.4ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "title" = $2, "result" = $3, "concluded_at" = $4, "updated_at" = $5 WHERE "tasks"."id" = $6[0m  [["status", "completed"], ["title", "Coleta: BMW X2"], ["result", "{\"marca\":\"BMW\",\"modelo\":\"X2\"}"], ["concluded_at", "2026-02-22 18:33:31.050243"], ["updated_at", "2026-02-22 18:33:31.050684"], ["id", 12]]
+  ↳ app/services/webmotors_scraper.rb:27:in `call'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/webmotors_scraper.rb:27:in `call'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
