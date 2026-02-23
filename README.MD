@@ -34,7 +34,8 @@ Abra o seu terminal e rode o comando abaixo para gerar uma string aleatória de 
 
     ruby -e "require 'securerandom'; puts SecureRandom.hex(64)"
 
-Criando o arquivo .env:
+###### Criando o arquivo .env
+
 Crie um arquivo chamado .env na raiz do projeto (onde está o docker-compose.yml) e cole a chave gerada:
 
 ```
@@ -45,7 +46,7 @@ JWT_SECRET=cole_a_chave_gerada_aqui
 
 Na raiz do projeto, execute:
 
-    docker-compose up -d --build
+    docker compose up -d --build
 
 Isso irá buildar as imagens, instalar as gems e subir todos os serviços.
 
@@ -65,11 +66,11 @@ Abra o seu navegador e acesse:
 
 Frontend:
 
-    http://localhost:8080 (ou a porta definida no seu servidor estático).
+    http://localhost:8080
 
 Sidekiq Dashboard:
 
-    http://localhost:3003/sidekiq (opcional, se configurado).
+    http://localhost:3003/sidekiq
 
 🛠️ Comandos Úteis
 
