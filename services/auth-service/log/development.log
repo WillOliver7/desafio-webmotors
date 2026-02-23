@@ -8,3 +8,1023 @@ Started POST "/notifications" for 172.20.0.6 at 2026-02-20 18:55:28 +0000
   
 ActionController::RoutingError (No route matches [POST] "/notifications"):
   
+  [1m[35m (370.2ms)[0m  [1m[35mCREATE DATABASE "auth_db" ENCODING = 'unicode'[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7589984997191955540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 20:13:32.309787', '2026-02-22 20:13:32.309792') RETURNING "key"[0m
+Migrating to CreateUsers (20260222201255)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260222201255') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7589984997191955540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/signup" for 172.18.0.1 at 2026-02-22 20:44:44 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: auth_db. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:74:in `rescue in new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:68:in `new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:980:in `connect'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:992:in `reconnect'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:685:in `block in reconnect!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:684:in `reconnect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:786:in `block in verify!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:777:in `verify!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:794:in `connect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1000:in `block in with_raw_connection'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:999:in `with_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1112:in `valid_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:616:in `get_database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:374:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:70:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:200:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:870:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:644:in `check_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:680:in `new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:730:in `checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:709:in `try_to_checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:654:in `acquire_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `checkout'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:182:in `connection'
+activerecord (7.1.6) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.6) lib/active_record/migration.rb:774:in `block in pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `each'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:752:in `check_pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.6) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.6) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE DATABASE "auth_db" ENCODING = 'unicode'[0m
+  [1m[35m (19.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7589984997191955540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (6.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 20:45:31.505118', '2026-02-22 20:45:31.505121') RETURNING "key"[0m
+Migrating to CreateUsers (20260222201255)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260222201255') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7589984997191955540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/signup" for 172.18.0.1 at 2026-02-22 20:45:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Before process_action callback :verify_authenticity_token has not been defined):
+  
+app/controllers/authentication_controller.rb:3:in `<class:AuthenticationController>'
+app/controllers/authentication_controller.rb:1:in `<main>'
+Started POST "/signup" for 172.18.0.1 at 2026-02-22 20:47:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#signup as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: signup, request: #<ActionDispatch::Request:0x000072816453b238>, params: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"signup", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "guilhermejno@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2026-02-22 20:47:22.769923"], ["updated_at", "2026-02-22 20:47:22.769923"]]
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+Completed 201 Created in 332ms (Views: 0.2ms | ActiveRecord: 20.8ms | Allocations: 26947)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-22 20:52:02 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: auth_db. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:74:in `rescue in new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:68:in `new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:980:in `connect'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:992:in `reconnect'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:685:in `block in reconnect!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:684:in `reconnect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:786:in `block in verify!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:777:in `verify!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:794:in `connect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1000:in `block in with_raw_connection'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:999:in `with_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1112:in `valid_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:616:in `get_database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:374:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:70:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:200:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:870:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:644:in `check_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:680:in `new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:730:in `checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:709:in `try_to_checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:654:in `acquire_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `checkout'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:182:in `connection'
+activerecord (7.1.6) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.6) lib/active_record/migration.rb:774:in `block in pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `each'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:752:in `check_pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.6) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.6) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/login" for 172.18.0.1 at 2026-02-22 20:52:09 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: auth_db. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:74:in `rescue in new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:68:in `new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:980:in `connect'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:992:in `reconnect'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:685:in `block in reconnect!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:684:in `reconnect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:786:in `block in verify!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:777:in `verify!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:794:in `connect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1000:in `block in with_raw_connection'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:999:in `with_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1112:in `valid_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:616:in `get_database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:374:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:70:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:200:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:870:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:644:in `check_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:680:in `new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:730:in `checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:709:in `try_to_checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:654:in `acquire_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `checkout'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:182:in `connection'
+activerecord (7.1.6) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.6) lib/active_record/migration.rb:774:in `block in pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `each'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:752:in `check_pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.6) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.6) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/signup" for 172.18.0.1 at 2026-02-22 20:52:18 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: auth_db. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:74:in `rescue in new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:68:in `new_client'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:980:in `connect'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:992:in `reconnect'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:685:in `block in reconnect!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:684:in `reconnect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:786:in `block in verify!'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:777:in `verify!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:794:in `connect!'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1000:in `block in with_raw_connection'
+activesupport (7.1.6) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:999:in `with_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:1112:in `valid_raw_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:616:in `get_database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:374:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:70:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/schema_cache.rb:200:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract_adapter.rb:870:in `database_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:644:in `check_version'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:680:in `new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:730:in `checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:709:in `try_to_checkout_new_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:654:in `acquire_connection'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `checkout'
+activerecord (7.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:182:in `connection'
+activerecord (7.1.6) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.6) lib/active_record/migration.rb:774:in `block in pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `each'
+activerecord (7.1.6) lib/active_record/migration.rb:773:in `pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:752:in `check_pending_migrations'
+activerecord (7.1.6) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.6) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.6) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.6) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+  [1m[35m (106.8ms)[0m  [1m[35mCREATE DATABASE "auth_db" ENCODING = 'unicode'[0m
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7589984997191955540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 20:54:23.000388', '2026-02-22 20:54:23.000392') RETURNING "key"[0m
+Migrating to CreateUsers (20260222201255)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260222201255') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7589984997191955540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:00:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:14:in `login'
+Completed 401 Unauthorized in 58ms (Views: 0.3ms | ActiveRecord: 9.5ms | Allocations: 14087)
+
+
+Started POST "/signup" for 172.18.0.1 at 2026-02-22 21:00:19 +0000
+Processing by AuthenticationController#signup as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: signup, request: #<ActionDispatch::Request:0x0000714b63a053c8>, params: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"signup", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "guilhermejno@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2026-02-22 21:00:19.895691"], ["updated_at", "2026-02-22 21:00:19.895691"]]
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authentication_controller.rb:5:in `signup'
+Completed 201 Created in 263ms (Views: 0.2ms | ActiveRecord: 12.4ms | Allocations: 8529)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:12:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:18:in `login'
+Completed 401 Unauthorized in 67ms (Views: 0.4ms | ActiveRecord: 9.8ms | Allocations: 14047)
+
+
+Started POST "/signup" for 172.18.0.1 at 2026-02-22 21:12:21 +0000
+Processing by AuthenticationController#signup as */*
+  Parameters: {"authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authentication_controller.rb:8:in `signup'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `signup'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/authentication_controller.rb:8:in `signup'
+Completed 422 Unprocessable Content in 2245ms (Views: 0.3ms | ActiveRecord: 6.8ms | Allocations: 983172)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:12:54 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:18:in `login'
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 590)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:13:19 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:18:in `login'
+Completed 401 Unauthorized in 8ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1983)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:17:20 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 401 Unauthorized in 45746ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 297670)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:18:13 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 500 Internal Server Error in 11481ms (ActiveRecord: 2.4ms | Allocations: 159682)
+
+
+  
+NameError (undefined local variable or method `cookies' for #<AuthenticationController:0x0000000000f0f0>):
+  
+app/controllers/authentication_controller.rb:24:in `login'
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:20:07 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:20:in `login'
+Completed 200 OK in 41873ms (Views: 0.2ms | ActiveRecord: 7.1ms | Allocations: 1673330)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-22 21:25:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 279ms (Views: 0.2ms | ActiveRecord: 11.9ms | Allocations: 19581)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:12:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 352ms (Views: 0.3ms | ActiveRecord: 52.2ms | Allocations: 19279)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:14:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 304ms (Views: 0.3ms | ActiveRecord: 14.3ms | Allocations: 19286)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:19:07 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:21:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 52765ms (Views: 0.3ms | ActiveRecord: 12.2ms | Allocations: 241751)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:26:44 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 252ms (Views: 0.2ms | ActiveRecord: 6.0ms | Allocations: 4330)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:36:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 310ms (Views: 0.3ms | ActiveRecord: 14.2ms | Allocations: 19280)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:40:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 304ms (Views: 0.3ms | ActiveRecord: 14.7ms | Allocations: 19281)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:46:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 306ms (Views: 0.4ms | ActiveRecord: 14.0ms | Allocations: 19289)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:53:10 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 273ms (Views: 0.2ms | ActiveRecord: 7.0ms | Allocations: 7509)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 00:55:21 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:19:in `login'
+Completed 200 OK in 246ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 596)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 01:00:11 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 231ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 4291)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 01:04:39 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 4287)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 01:07:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 346ms (Views: 0.3ms | ActiveRecord: 27.9ms | Allocations: 24363)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 01:11:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 307ms (Views: 0.3ms | ActiveRecord: 13.5ms | Allocations: 19345)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 01:13:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 301ms (Views: 0.4ms | ActiveRecord: 12.6ms | Allocations: 19274)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 01:16:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 309ms (Views: 0.2ms | ActiveRecord: 14.1ms | Allocations: 19270)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:12:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:26:in `login'
+Completed 200 OK in 345ms (Views: 0.2ms | ActiveRecord: 31.4ms | Allocations: 19292)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:13:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:28:in `login'
+Completed 200 OK in 278ms (Views: 0.2ms | ActiveRecord: 11.6ms | Allocations: 19292)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:15:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:28:in `login'
+Completed 200 OK in 279ms (Views: 0.2ms | ActiveRecord: 12.2ms | Allocations: 19292)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:20:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:28:in `login'
+Completed 200 OK in 304ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 19293)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:22:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 314ms (Views: 0.3ms | ActiveRecord: 15.4ms | Allocations: 19287)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:26:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 287ms (Views: 0.2ms | ActiveRecord: 13.2ms | Allocations: 19268)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:27:25 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 214ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 616)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:32:41 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 597)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:35:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 307ms (Views: 0.3ms | ActiveRecord: 13.1ms | Allocations: 19293)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:38:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 281ms (Views: 0.2ms | ActiveRecord: 12.1ms | Allocations: 19292)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:41:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:27:in `login'
+Completed 200 OK in 310ms (Views: 0.3ms | ActiveRecord: 13.5ms | Allocations: 19292)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:48:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 311ms (Views: 0.2ms | ActiveRecord: 14.2ms | Allocations: 19328)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:50:40 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 217ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 603)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:51:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 285ms (Views: 0.3ms | ActiveRecord: 12.6ms | Allocations: 19326)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:51:32 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 216ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 602)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:54:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 306ms (Views: 0.2ms | ActiveRecord: 13.2ms | Allocations: 19334)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 02:54:07 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 236ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 603)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:02:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#validate_session as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 181)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<AuthenticationController:0x00000000008ac0>):
+  
+activesupport (7.1.6) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.6) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.6) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.6) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.6) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.6) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.6) lib/active_support/callbacks.rb:109:in `run_callbacks'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.6) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.6) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.6) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.6) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.6) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+rack (3.2.5) lib/rack/etag.rb:29:in `call'
+rack (3.2.5) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.5) lib/rack/head.rb:15:in `call'
+activerecord (7.1.6) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/login" for 172.18.0.1 at 2026-02-23 03:02:45 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 287ms (Views: 0.2ms | ActiveRecord: 11.8ms | Allocations: 19333)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:02:48 +0000
+Processing by AuthenticationController#validate_session as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 93)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<AuthenticationController:0x00000000009060>):
+  
+activesupport (7.1.6) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.6) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.6) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.6) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.6) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.6) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.6) lib/active_support/callbacks.rb:109:in `run_callbacks'
+actionpack (7.1.6) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.6) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.6) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.6) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.6) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.6) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.6) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.6) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.6) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.6) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+rack (3.2.5) lib/rack/etag.rb:29:in `call'
+rack (3.2.5) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.5) lib/rack/head.rb:15:in `call'
+activerecord (7.1.6) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.6) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.6) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.6) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.6) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.1.6) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (7.1.6) lib/rails/engine.rb:536:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/login" for 172.18.0.1 at 2026-02-23 03:04:29 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 225ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 4359)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:04:32 +0000
+Processing by AuthenticationController#validate_session as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:04:36 +0000
+Processing by AuthenticationController#validate_session as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 172)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:04:42 +0000
+Processing by AuthenticationController#validate_session as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 170)
+
+
+Started DELETE "/logout" for 172.18.0.1 at 2026-02-23 03:04:43 +0000
+Processing by AuthenticationController#logout as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 92)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:04:43 +0000
+Processing by AuthenticationController#validate_session as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 117)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 03:04:46 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 216ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 578)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:07:07 +0000
+Processing by AuthenticationController#validate_session as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:07:09 +0000
+Processing by AuthenticationController#validate_session as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 170)
+
+
+Started DELETE "/logout" for 172.18.0.1 at 2026-02-23 03:07:10 +0000
+Processing by AuthenticationController#logout as */*
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 86)
+
+
+Started GET "/validate_session" for 172.18.0.1 at 2026-02-23 03:07:11 +0000
+Processing by AuthenticationController#validate_session as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 93)
+
+
+Started POST "/login" for 172.18.0.1 at 2026-02-23 03:07:14 +0000
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"guilhermejno@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guilhermejno@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:33:in `login'
+Completed 200 OK in 236ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 574)
+
+

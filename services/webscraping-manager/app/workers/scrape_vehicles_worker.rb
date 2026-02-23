@@ -1,11 +1,10 @@
 class ScrapeVehiclesWorker
   include Sidekiq::Worker
 
-  def perform(url)
-    task = Task.create!(
-      url: url,
-      title: "BMW X2 - Pendente"
-    )
+  def perform(task_id)
+    task = Task.find(task_id)
+    url = task.url
+    puts "🚀 Iniciando scraping para: #{url}"
     WebmotorsCaptchaSolver.run(task.id)
     
     if task.reload.status == 'failed'

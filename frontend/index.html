@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Webmotors Scraper</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <section id="auth-section" class="hidden">
+                <h2 id="auth-title">Entrar</h2>
+                <form id="auth-form">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <input type="password" id="password" placeholder="Senha" required>
+                    <button type="submit" id="auth-btn">Acessar</button>
+                </form>
+                <p><a href="#" id="toggle-auth">Não tem conta? Cadastre-se</a></p>
+            </section>
+
+            <section id="main-section" class="hidden">
+                <header>
+                    <h2>Minhas Tarefas</h2>
+                    <button id="logout-btn">Sair</button>
+                </header>
+
+                <form id="task-form">
+                    <input type="text" id="task-title" placeholder="Título (ex: BMW X2)" required>
+                    <input type="url" id="task-url" placeholder="URL do anúncio Webmotors" required>
+                    <button type="submit">Iniciar Coleta</button>
+                </form>
+
+                <div id="tasks-container">
+                    <table id="tasks-table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Status</th>
+                                <th>Resultado</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks-list">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
