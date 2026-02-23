@@ -984,3 +984,102 @@ Processing by TasksController#index as */*
 Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1637)
 
 
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:02:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 77ms (Views: 17.0ms | ActiveRecord: 12.4ms | Allocations: 22909)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:30 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 1637)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:32 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1437)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:32 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 1417)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:36 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:36 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:42 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 1417)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:42 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:04:46 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:07:07 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:07:07 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:07:09 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:07:09 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 03:07:14 +0000
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1399)
+
+

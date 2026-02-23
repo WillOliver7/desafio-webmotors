@@ -10,9 +10,16 @@ const authSection = document.getElementById('auth-section');
 const mainSection = document.getElementById('main-section');
 const tasksList = document.getElementById('tasks-list');
 
-document.addEventListener('DOMContentLoaded', () => {
-    checkInitialSession();
-});
+function showLoginPage() {
+    authSection.classList.remove('hidden');
+    mainSection.classList.add('hidden');
+}
+
+function showDashboard() {
+    authSection.classList.add('hidden');
+    mainSection.classList.remove('hidden');
+    loadTasks();
+}
 
 async function checkInitialSession() {
     try {
@@ -97,29 +104,28 @@ async function loadTasks() {
     }
 }
 
-function showDashboard() {
-    authSection.classList.add('hidden');
-    mainSection.classList.remove('hidden');
-    loadTasks();
-}
-
 async function logout() {
     try {
-        await fetch(`${API_AUTH}/logout`, {
+        const response = await fetch(`${API_AUTH}/logout`, {
             method: 'DELETE',
             credentials: 'include'
         });
         
-        // Limpa o estado local e volta pro login
-        window.location.reload(); // Forma mais limpa de resetar o estado do JS
+        if (response.ok) {
+            window.location.reload(); 
+        }
     } catch (error) {
         console.error("Erro ao deslogar:", error);
     }
 }
 
-document.getElementById('logout-btn').addEventListener('click', logout);
-
-function showLoginPage() {
-    authSection.classList.remove('hidden');
-    mainSection.classList.add('hidden');
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            logout();
+        });
+    }
+    checkInitialSession();
+});
