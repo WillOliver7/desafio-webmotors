@@ -147,6 +147,8 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.18.1)
+    jwt (3.1.2)
+      base64
     logger (1.7.0)
     loofah (2.25.0)
       crass (~> 1.0.2)
@@ -319,6 +321,7 @@ DEPENDENCIES
   faraday (~> 2.14)
   faraday-typhoeus
   httparty
+  jwt
   pg (~> 1.1)
   playwright-ruby-client (= 1.40.0)
   pry-byebug

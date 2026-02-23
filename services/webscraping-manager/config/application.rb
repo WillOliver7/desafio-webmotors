@@ -27,6 +27,6 @@ module App
     config.active_job.queue_adapter = :sidekiq
 
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore, key: '_manager_session'
   end
 end

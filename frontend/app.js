@@ -10,6 +10,29 @@ const authSection = document.getElementById('auth-section');
 const mainSection = document.getElementById('main-section');
 const tasksList = document.getElementById('tasks-list');
 
+document.addEventListener('DOMContentLoaded', () => {
+    checkInitialSession();
+});
+
+async function checkInitialSession() {
+    try {
+        const response = await fetch(`${API_AUTH}/validate_session`, {
+            method: 'GET',
+            credentials: 'include' // Obrigatório para enviar o cookie httponly
+        });
+
+        if (response.ok) {
+            console.log("Sessão ativa encontrada.");
+            showDashboard(); // Esconde login, mostra painel
+            loadTasks();    // Carrega a lista de tarefas
+        } else {
+            showLoginPage(); // Mostra tela de login
+        }
+    } catch (error) {
+        showLoginPage();
+    }
+}
+
 // Alternar entre Login e Signup
 document.getElementById('toggle-auth').addEventListener('click', (e) => {
     isLogin = !isLogin;
@@ -78,4 +101,25 @@ function showDashboard() {
     authSection.classList.add('hidden');
     mainSection.classList.remove('hidden');
     loadTasks();
+}
+
+async function logout() {
+    try {
+        await fetch(`${API_AUTH}/logout`, {
+            method: 'DELETE',
+            credentials: 'include'
+        });
+        
+        // Limpa o estado local e volta pro login
+        window.location.reload(); // Forma mais limpa de resetar o estado do JS
+    } catch (error) {
+        console.error("Erro ao deslogar:", error);
+    }
+}
+
+document.getElementById('logout-btn').addEventListener('click', logout);
+
+function showLoginPage() {
+    authSection.classList.remove('hidden');
+    mainSection.classList.add('hidden');
 }

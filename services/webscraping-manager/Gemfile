@@ -42,6 +42,7 @@ gem "typhoeus"
 gem "faraday-typhoeus"
 gem 'websocket-driver'
 gem 'playwright-ruby-client', '1.40.0'
+gem "jwt"
 
 group :development, :test do
   # debugging

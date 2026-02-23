@@ -1,11 +1,10 @@
+require 'jwt'
+
 class ApplicationController < ActionController::API
   include ActionController::Cookies
 
   def authenticate_user!
     token = cookies[:jwt]
-
-    binding.pry
-    
     begin
       decoded = JWT.decode(token, ENV['JWT_SECRET'], true, { algorithm: 'HS256' })
       @current_user_id = decoded[0]['user_id']
