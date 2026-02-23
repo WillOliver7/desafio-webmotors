@@ -53,6 +53,16 @@ services:
       - DEFAULT_HEADLESS=false
     shm_size: '2gb'
 
+  frontend:
+    image: python:3.10-slim
+    container_name: webmotors-frontend
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    ports:
+      - "8080:8000"
+    command: python3 -m http.server 8000
+
   auth-service:
     build: ./services/auth-service
     user: "1000:1000"
@@ -65,6 +75,7 @@ services:
     environment:
       - RAILS_ENV=development
       - DATABASE_URL=postgresql://postgres:password@db:5432/auth_db
+      - JWT_SECRET=${SHARED_JWT_SECRET}
     depends_on:
       - db
     stdin_open: true
@@ -102,6 +113,7 @@ services:
       - DB_HOST=db
       - AUTH_SERVICE_URL=http://auth-service:3000
       - NOTIFICATION_SERVICE_URL=http://notification-service:3000
+      - JWT_SECRET=${SHARED_JWT_SECRET}
     depends_on:
       - db
     stdin_open: true

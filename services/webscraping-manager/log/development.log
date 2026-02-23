@@ -251,3 +251,206 @@ Migrating to CreateTasks (20260222173706)
   ↳ app/services/webmotors_scraper.rb:27:in `call'
   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
   ↳ app/workers/scrape_vehicles_worker.rb:11:in `perform'
+  [1m[35m (100.2ms)[0m  [1m[35mCREATE DATABASE "manager_db" ENCODING = 'unicode'[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1273077628727038575)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (5.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-22 20:54:36.629847', '2026-02-22 20:54:36.629854') RETURNING "key"[0m
+Migrating to CreateTasks (20260222173706)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "title" character varying, "status" character varying DEFAULT 'pending', "url" character varying, "result" jsonb, "error_message" text, "concluded_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260222173706') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1273077628727038575)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:20:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 477)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:17 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:22 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started POST "/tasks" for 172.18.0.1 at 2026-02-22 21:21:23 +0000
+Processing by TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"teste", "url"=>"https://www.webmotors.com.br/comprar/bmw/x2/20-turbo-gasolina-xdrive-m35i-steptronic/4-portas/2025-2026/65066397"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 280)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:23 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:27 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:32 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:37 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:42 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:47 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:52 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:21:56 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:01 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:06 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:10 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:15 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:20 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:24 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:29 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:34 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:38 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:22:43 +0000
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:24:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:24:44 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2483ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 15202)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:24:48 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:24:53 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 3651ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 17098)
+
+
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 14242ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 357261)
+
+
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 25490ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 717711)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:14 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 22ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 6811)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:18 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 6733)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:23 +0000
+Processing by TasksController#index as */*
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 21ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 11066)
+
+
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:28 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:33 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:37 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:42 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-22 21:25:47 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 00:02:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 00:02:50 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 00:02:55 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 00:02:59 +0000
+Processing by TasksController#index as */*
+Started GET "/tasks" for 172.18.0.1 at 2026-02-23 00:03:04 +0000
+Processing by TasksController#index as */*

@@ -10,8 +10,7 @@ class WebmotorsScraper
       model = h1.locator("strong").text_content&.strip
       description = h1.locator("#VehicleBasicInformationDescription").text_content&.strip
       price = page.locator("#vehicleSendProposalPrice").text_content&.strip
-      
-      binding.pry
+
       brand = text.gsub(model, "").gsub(description, "").strip
 
       puts "🏎️ Marca: #{brand}"
